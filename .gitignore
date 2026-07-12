@@ -1,0 +1,9 @@
+# Local dependencies and build output
+**/node_modules/
+**/build/
+
+# Private environment settings
+**/.env
+
+# Temporary npm cache created during local installs
+work/npm-cache/
