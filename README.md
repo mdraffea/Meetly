@@ -1,2 +1,3 @@
-# Zoom
-A full stack video conferencing web application.
+# Meetly
+
+A full-stack video conferencing web application.

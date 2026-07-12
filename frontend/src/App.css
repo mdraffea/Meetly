@@ -1,96 +1,73 @@
 .landingPageContainer {
   width: 100vw;
-  height: 100vh;
-  background: url("/public/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0b0a1e;
+  background-image: radial-gradient(circle at 88% 16%, rgba(138, 92, 246, 0.5), transparent 26%), radial-gradient(circle at 12% 92%, rgba(14, 165, 233, 0.22), transparent 30%);
+  color: #f8fafc;
 }
 
-.landingPageContainer nav {
-  padding-inline: 1.2rem;
-  padding-block: 1.6rem;
+.landingPageContainer .landingNav {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.55rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.landingPageContainer nav h2 {
-  font-size: 1.8rem;
-  font-weight: 500;
+.landingPageContainer .navHeader { display: flex; align-items: center; gap: 0.7rem; }
+.landingPageContainer nav h2 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.04em; margin: 0; }
+.brandMark { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 0.7rem; color: white; background: linear-gradient(135deg, #8b5cf6, #38bdf8); font-size: 1.15rem; font-weight: 800; }
+
+.landingPageContainer nav .navlist { display: flex; align-items: center; gap: 0.45rem; }
+.landingPageContainer button { font: inherit; cursor: pointer; }
+.navLink, .navLogin { color: #e2e8f0; background: transparent; border: 0; padding: 0.65rem 0.85rem; font-size: 0.95rem; }
+.navLink:hover { color: white; }
+.navLogin { margin-left: 0.35rem; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 0.65rem; color: white; }
+.navLogin:hover { background: rgba(255, 255, 255, 0.1); }
+
+.landingMainContainer { max-width: 1320px; margin: 0 auto; display: flex; justify-content: space-between; gap: 4rem; padding: 4.5rem 3rem 2rem; min-height: calc(100vh - 92px); align-items: center; }
+.heroCopy { max-width: 660px; position: relative; z-index: 1; }
+.eyebrow { margin: 0 0 1.1rem; color: #a5b4fc; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; }
+.heroCopy h1 { margin: 0; font-size: clamp(3.3rem, 6vw, 6.6rem); line-height: 0.98; letter-spacing: -0.065em; font-weight: 750; }
+.heroCopy h1 span { background: linear-gradient(100deg, #a78bfa, #38bdf8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.heroDescription { max-width: 530px; margin: 1.7rem 0 0; color: #cbd5e1; font-size: clamp(1.05rem, 1.6vw, 1.32rem); line-height: 1.65; }
+.heroActions { display: flex; gap: 0.9rem; margin-top: 2.2rem; }
+.primaryCta, .secondaryCta { display: inline-flex; align-items: center; gap: 0.6rem; border-radius: 0.75rem; padding: 0.95rem 1.25rem; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+.primaryCta { background: linear-gradient(100deg, #8b5cf6, #6366f1); color: white; box-shadow: 0 14px 30px rgba(99, 102, 241, 0.28); }
+.primaryCta:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(99, 102, 241, 0.42); }
+.secondaryCta { border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.05); color: white; }
+.secondaryCta:hover { background: rgba(255, 255, 255, 0.1); }
+.heroTrust { display: flex; align-items: center; gap: 0.55rem; margin-top: 1.45rem; color: #94a3b8; font-size: 0.88rem; }
+.onlineDot { width: 0.48rem; height: 0.48rem; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.13); }
+
+.heroVisual { position: relative; min-width: 420px; display: flex; justify-content: center; align-items: center; }
+.heroVisual img { position: relative; z-index: 1; width: min(39vw, 570px); min-width: 390px; height: auto; filter: drop-shadow(0 28px 45px rgba(0, 0, 0, 0.38)); }
+.orb { position: absolute; border-radius: 50%; filter: blur(1px); }
+.orbOne { width: 360px; height: 360px; background: rgba(99, 102, 241, 0.34); right: 10%; top: 3%; }
+.orbTwo { width: 190px; height: 190px; background: rgba(56, 189, 248, 0.22); left: 5%; bottom: 10%; }
+.visualLabel { position: absolute; z-index: 2; top: 18%; right: 5%; padding: 0.6rem 0.85rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(9px); font-size: 0.8rem; color: #e0e7ff; }
+
+.navBar { display: flex; align-items: center; justify-content: space-between; padding-inline: 20px; text-align: center; }
+.meetContainer { display: flex; padding-inline: 20px; height: 80vh; gap: 10vw; justify-content: center; }
+.leftPanel { height: 100%; display: flex; align-items: center; }
+.rightPanel { display: flex; align-items: center; }
+.rightPanel > img { width: 30vw; height: auto; border-radius: 20px; }
+
+@media (max-width: 860px) {
+  .landingPageContainer .landingNav { padding: 1.2rem 1.4rem; }
+  .landingMainContainer { min-height: auto; padding: 4rem 1.4rem 2.5rem; flex-direction: column; align-items: flex-start; gap: 2.5rem; }
+  .heroVisual { min-width: 0; width: 100%; }
+  .heroVisual img { width: min(90vw, 510px); min-width: 0; }
 }
 
-.landingPageContainer nav .navlist {
-  display: flex;
-  gap: 1.6rem;
-  cursor: pointer;
-
-}
-
-.landingMainContainer {
-  display: flex;
-  justify-content: space-between;
-  padding-inline: 3rem;
-  height: 80vh;
-  align-items: center;
-}
-
-.landingMainContainer>div:nth-child(1) {
-  font-size: 2.2rem;
-}
-
-.landingMainContainer>div:nth-child(1) div[role='button'] {
-  background: #D97500;
-  width: fit-content;
-  padding: 1rem;
-  border-radius: 20px;
-  margin-top: 1.9rem;
-}
-
-.landingMainContainer>div:nth-child(1) div[role='button'] a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.7rem;
-}
-
-.landingMainContainer>div:nth-child(2) img {
-  height: 70vh;
-  width: auto;
-}
-
-.navBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-inline: 20px;
-  text-align: center;
-
-}
-.meetContainer {
-  display: flex;
-  padding-inline: 20px;
-  height: 80vh;
-  gap: 10vw;
-  justify-content: center;
-}
-
-
-
-.leftPanel {
-  height: 100%;
-  display: flex;
-  align-items: center;
-
-}
-
-.rightPanel {
-  display: flex;
-  align-items: center;
-}
-
-.rightPanel > img {
-  width: 30vw;
-  height: auto;
-  border-radius: 20px;
+@media (max-width: 560px) {
+  .navLink { display: none; }
+  .landingPageContainer .landingNav { padding: 1rem 1.15rem; }
+  .landingMainContainer { padding: 3.2rem 1.15rem 2rem; }
+  .heroCopy h1 { font-size: clamp(3rem, 15vw, 4.5rem); }
+  .heroActions { flex-direction: column; align-items: flex-start; }
+  .primaryCta, .secondaryCta { width: 100%; justify-content: center; box-sizing: border-box; }
+  .heroVisual img { width: 100%; }
 }

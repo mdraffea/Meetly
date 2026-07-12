@@ -22,8 +22,13 @@ app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use("/api/v1/users", userRoutes);
 
 const start = async () => {
-    app.set("mongo_user")
-    const connectionDb = await mongoose.connect("mongodb+srv://imdigitalashish:imdigitalashish@cluster0.cujabk4.mongodb.net/")
+    const mongoUri = process.env.MONGODB_URI;
+
+    if (!mongoUri) {
+        throw new Error("MONGODB_URI is required. Add it to your environment before starting the backend.");
+    }
+
+    const connectionDb = await mongoose.connect(mongoUri);
 
     console.log(`MONGO Connected DB HOst: ${connectionDb.connection.host}`)
     server.listen(app.get("port"), () => {

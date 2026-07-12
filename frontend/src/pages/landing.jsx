@@ -8,40 +8,47 @@ export default function LandingPage() {
 
     return (
         <div className='landingPageContainer'>
-            <nav>
+            <nav className="landingNav">
                 <div className='navHeader'>
-                    <h2>Apna Video Call</h2>
+                    <span className="brandMark" aria-hidden="true">M</span>
+                    <h2>Meetly</h2>
                 </div>
                 <div className='navlist'>
-                    <p onClick={() => {
+                    <button className="navLink" onClick={() => {
                         router("/aljk23")
-                    }}>Join as Guest</p>
-                    <p onClick={() => {
+                    }}>Join as guest</button>
+                    <button className="navLink" onClick={() => {
                         router("/auth")
 
-                    }}>Register</p>
-                    <div onClick={() => {
+                    }}>Register</button>
+                    <button className="navLogin" onClick={() => {
                         router("/auth")
-
-                    }} role='button'>
-                        <p>Login</p>
-                    </div>
+                    }}>Log in</button>
                 </div>
             </nav>
 
 
             <div className="landingMainContainer">
-                <div>
-                    <h1><span style={{ color: "#FF9839" }}>Connect</span> with your loved Ones</h1>
+                <div className="heroCopy">
+                    <p className="eyebrow">VIDEO CALLS, MADE SIMPLE</p>
+                    <h1>Feel <span>closer</span>, wherever you are.</h1>
 
-                    <p>Cover a distance by Apna Video Call</p>
-                    <div role='button'>
-                        <Link to={"/auth"}>Get Started</Link>
+                    <p className="heroDescription">Meet, talk, and share the moments that matter with crystal-clear video calls.</p>
+                    <div className="heroActions">
+                        <Link className="primaryCta" to={"/auth"}>Start a meeting <span aria-hidden="true">→</span></Link>
+                        <button className="secondaryCta" onClick={() => router("/aljk23")}>Join as guest</button>
+                    </div>
+                    <div className="heroTrust">
+                        <span className="onlineDot" aria-hidden="true"></span>
+                        Free to use · No download required
                     </div>
                 </div>
-                <div>
+                <div className="heroVisual">
+                    <div className="orb orbOne" aria-hidden="true"></div>
+                    <div className="orb orbTwo" aria-hidden="true"></div>
+                    <div className="visualLabel">Stay connected</div>
 
-                    <img src="/mobile.png" alt="" />
+                    <img src="/mobile.png" alt="Meetly video calling on mobile devices" />
 
                 </div>
             </div>
